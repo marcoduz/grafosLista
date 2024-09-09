@@ -13,3 +13,8 @@
 
 Aresta::Aresta(int v1, int v2) : v1(v1), v2(v2) {
 }
+
+//estava no programa referencia não sei oq faz
+// std::string Aresta::to_string() {
+//     return std::to_string(v1) + " " + std::to_string(v2);
+// }

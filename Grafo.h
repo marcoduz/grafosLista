@@ -14,6 +14,8 @@
 
 #define GRAFO_H
 
+#include <vector>
+#include <list>
 #include "Aresta.h"
 
 class Grafo {
@@ -23,12 +25,16 @@ public:
     int num_arestas();
     void insere_aresta(Aresta e);
     void remove_aresta(Aresta e);
+
+    bool existe_aresta(Aresta e);
+
     // Metodo num_arestas_subgrafo_induzido
     void imprime_complemento();
+
 private:
     int num_vertices_;
     int num_arestas_;
-    // Representacao do grafo como listas de adjacencia
+    std::vector<std::list<int>> lista_;
 };
 
 #endif /* GRAFO_H */

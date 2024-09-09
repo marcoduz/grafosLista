@@ -19,6 +19,8 @@ public:
     const int v2;
 
     Aresta(int v1, int v2);
+
+    // std::string to_string(); //tava no programa referencia n sei oq faz
 };
 
 #endif /* ARESTA_H */
