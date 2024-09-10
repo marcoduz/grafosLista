@@ -16,31 +16,43 @@ using namespace std;
 
 int main()
 {
-    int TAM = 100;
-    char entrada[TAM];
-    cin.get(entrada, TAM);
-
-    int I = (int)entrada[0] - (int)'0', O = (int)entrada[2] - (int)'0';
+    int I, O;
+    cin >> I >> O;
     Grafo g(I);
 
-    for (int i = 0; i <= O; i++)
+    for (int i = 0; i < O; i++)
     {
-        cin.getline(entrada, TAM);
-        char op = entrada[0];
+        char op;
+        int X, Y, N;
+        vector<int> vertices;
+
+        cin >> op;
 
         switch (op)
         {
         case 'I':
-            /* code */
+            cin >> X >> Y;
+            g.insere_aresta(Aresta(X, Y));
             break;
         case 'R':
-            cout << "teste\n";
+            cin >> X >> Y;
+            g.remove_aresta(Aresta(X, Y));
             break;
         case 'E':
             /* code */
             break;
         case 'S':
-            /* code */
+            cin >> N;
+            vertices.resize(N);
+            for (int j = 0; j < N; j++)
+            {
+                cin >> vertices[j];
+            }
+
+            // for (int v : vertices)
+            // {
+            //     cout << v << ", ";
+            // }
             break;
         case 'X':
             /* code */
