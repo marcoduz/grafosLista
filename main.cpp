@@ -33,13 +33,15 @@ int main()
         case 'I':
             cin >> X >> Y;
             g.insere_aresta(Aresta(X, Y));
+            cout << g.num_arestas() << "\n";
             break;
         case 'R':
             cin >> X >> Y;
             g.remove_aresta(Aresta(X, Y));
+            cout << g.num_arestas() << "\n";
             break;
         case 'E':
-            /* code */
+            cout << g.num_arestas() << "\n";
             break;
         case 'S':
             cin >> N;

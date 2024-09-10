@@ -27,7 +27,7 @@ public:
     void remove_aresta(Aresta e);
 
     bool existe_aresta(Aresta e);
-
+    bool vertice_valido(int v);
     // Metodo num_arestas_subgrafo_induzido
     void imprime_complemento();
 
