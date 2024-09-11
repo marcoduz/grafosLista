@@ -28,7 +28,7 @@ public:
 
     bool existe_aresta(Aresta e);
     bool vertice_valido(int v);
-    // Metodo num_arestas_subgrafo_induzido
+    int num_arestas_subgrafo_induzido(std::vector<int> vertices);
     void imprime_complemento();
 
 private:

@@ -50,11 +50,10 @@ int main()
             {
                 cin >> vertices[j];
             }
+            int arestas_subgrafo;
+             arestas_subgrafo = g.num_arestas_subgrafo_induzido(vertices);
 
-            // for (int v : vertices)
-            // {
-            //     cout << v << ", ";
-            // }
+            cout << arestas_subgrafo <<"\n";
             break;
         case 'X':
             /* code */

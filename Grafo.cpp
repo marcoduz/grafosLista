@@ -5,7 +5,7 @@
  *
  * Nome:      Marco Antonio Duz
  * Matricula: 2311100006
- * 
+ *
  * Nome:      Wendell Luis Neris
  * Matricula: 2311100035
  */
@@ -17,8 +17,10 @@
 #include <stdexcept>
 using namespace std;
 
-bool Grafo::vertice_valido(int v){
-    if (v<0 || v>num_vertices_){
+bool Grafo::vertice_valido(int v)
+{
+    if (v < 0 || v > num_vertices_)
+    {
         return false;
     }
     return true;
@@ -32,7 +34,7 @@ Grafo::Grafo(int num_vertices)
     num_vertices_ = num_vertices;
     num_arestas_ = 0;
 
-    lista_.resize(num_vertices); // define a quantidade de linhas
+    lista_.resize(num_vertices);
 }
 
 int Grafo::num_arestas()
@@ -40,44 +42,69 @@ int Grafo::num_arestas()
     return num_arestas_;
 }
 
-void Grafo::insere_aresta(Aresta e) {
+void Grafo::insere_aresta(Aresta e)
+{
 
-    if (!vertice_valido(e.v1) || !vertice_valido(e.v2)){
-        if (!vertice_valido(e.v1) || !vertice_valido(e.v2)){
-        throw_with_nested(runtime_error("Erro na operacao "
-            "insere_aresta(Aresta): a aresta  eh invalida!"));
+    if (!vertice_valido(e.v1) || !vertice_valido(e.v2))
+    {
+        if (!vertice_valido(e.v1) || !vertice_valido(e.v2))
+        {
+            throw_with_nested(runtime_error("Erro na operacao "
+                                            "insere_aresta(Aresta): a aresta  eh invalida!"));
+        }
     }
-    }
-    if (!(existe_aresta(e)) && (e.v1 != e.v2)) {
+    if (!(existe_aresta(e)) && (e.v1 != e.v2))
+    {
         lista_[e.v1].push_front(e.v2);
         lista_[e.v2].push_front(e.v1);
         num_arestas_++;
     }
 }
 
-void Grafo::remove_aresta(Aresta e) {
-    if (!vertice_valido(e.v1) || !vertice_valido(e.v2)){
+void Grafo::remove_aresta(Aresta e)
+{
+    if (!vertice_valido(e.v1) || !vertice_valido(e.v2))
+    {
         throw_with_nested(runtime_error("Erro na operacao "
-            "insere_aresta(Aresta): a aresta  eh invalida!"));
+                                        "insere_aresta(Aresta): a aresta  eh invalida!"));
     }
-    if (existe_aresta(e)) {
+    if (existe_aresta(e))
+    {
         lista_[e.v1].remove(e.v2);
         lista_[e.v2].remove(e.v1);
         num_arestas_--;
     }
 }
 
-bool Grafo::existe_aresta(Aresta e){
+bool Grafo::existe_aresta(Aresta e)
+{
     for (int v2 : lista_[e.v1])
     {
-       if (v2 == e.v2)
-       {
-        return true;
-       }
+        if (v2 == e.v2)
+        {
+            return true;
+        }
     }
     return false;
 }
 
-void Grafo::imprime_complemento(){
+void Grafo::imprime_complemento()
+{
+}
 
+int Grafo::num_arestas_subgrafo_induzido(std::vector<int> vertices)
+{
+    int cont_arestas = 0;
+    for (int v : vertices)
+    {
+        for (int a : lista_[v])
+        {
+            if (existe_aresta)
+            {
+                cont_arestas++;
+            }
+        }
+    }
+
+    return cont_arestas;
 }
