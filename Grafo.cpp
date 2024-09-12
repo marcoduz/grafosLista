@@ -98,8 +98,15 @@ bool Grafo::existe_aresta(Aresta e)
     return false;
 }
 
-void Grafo::imprime_complemento()
-{
+void Grafo::imprime_complemento(){
+ for(int i = 0; i<num_vertices_; i++){
+            cout << i << ": ";
+        for(int j = 0; j<num_vertices_; j++){
+            if (!existe_aresta(Aresta(i, j)) && i != j) {
+                cout << j << " ";
+            }
+        }
+        cout << endl;
 }
 
 int Grafo::num_arestas_subgrafo_induzido(std::vector<int> vertices)

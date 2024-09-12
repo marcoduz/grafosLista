@@ -54,7 +54,8 @@ int main()
             cout << arestas_subgrafo <<"\n";
             break;
         case 'X':
-            /* code */
+            g.imprime_complemento();
+            cout << "\n";
             break;
         default:
         cout << "opcao invalida\n";
