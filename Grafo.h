@@ -21,7 +21,6 @@
 class Grafo {
 public:
     Grafo(int num_vertices);
-    // ~Grafo(); // Se necessario
     int num_arestas();
     void insere_aresta(Aresta e);
     void remove_aresta(Aresta e);
