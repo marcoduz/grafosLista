@@ -17,18 +17,6 @@
 #include <stdexcept>
 using namespace std;
 
-bool vertice_verificado(int v, std::vector<int> vertices_verificados)
-{
-    for (int i = 0; i < vertices_verificados.size(); i++)
-    {
-        if (v == vertices_verificados[i])
-        {
-            return true;
-        }
-    }
-    return false;
-}
-
 bool Grafo::vertice_valido(int v)
 {
     if (v < 0 || v >= num_vertices_)
@@ -126,12 +114,12 @@ int Grafo::num_arestas_subgrafo_induzido(std::vector<int> vertices)
     {
         for (int a : lista_[v])
         {
-            if (existe_aresta(Aresta(v, a)) && !vertice_verificado(v, vertices_verificados))
+            if (existe_aresta(Aresta(v, a)) && vertices_verificados[a]==1)
             {
                 cont_arestas++;
             }
         }
-        vertices_verificados.push_back(v);
+        vertices_verificados[v]=1;
     }
 
     return cont_arestas;
