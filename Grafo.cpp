@@ -108,7 +108,7 @@ int Grafo::num_arestas_subgrafo_induzido(std::vector<int> vertices)
 {
     int cont_arestas = 0;
     std::vector<int> vertices_verificados;
-    vertices_verificados.resize(vertices.size());
+    vertices_verificados.resize(num_vertices_);
 
         for (int v : vertices)
         {
