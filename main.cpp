@@ -33,12 +33,10 @@ int main()
         case 'I':
             cin >> X >> Y;
             g.insere_aresta(Aresta(X, Y));
-            cout << g.num_arestas() << "\n";
             break;
         case 'R':
             cin >> X >> Y;
             g.remove_aresta(Aresta(X, Y));
-            cout << g.num_arestas() << "\n";
             break;
         case 'E':
             cout << g.num_arestas() << "\n";
@@ -57,7 +55,8 @@ int main()
             // }
             break;
         case 'X':
-            /* code */
+            g.imprime_complemento();
+            cout << "\n";
             break;
         default:
             break;

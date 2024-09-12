@@ -79,5 +79,13 @@ bool Grafo::existe_aresta(Aresta e){
 }
 
 void Grafo::imprime_complemento(){
-
+    for(int i = 0; i<num_vertices_; i++){
+            cout << i << ": ";
+        for(int j = 0; j<num_vertices_; j++){
+            if (!existe_aresta(Aresta(i, j)) && i != j) {
+                cout << j << " ";
+            }
+        }
+        cout << endl;
+    }
 }
