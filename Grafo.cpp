@@ -29,7 +29,7 @@ bool vertice_verificado(int v, std::vector<int> vertices_verificados){
 
 bool Grafo::vertice_valido(int v)
 {
-    if (v < 0 || v > num_vertices_)
+    if (v < 0 || v >= num_vertices_)
     {
         return false;
     }
