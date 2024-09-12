@@ -55,7 +55,6 @@ int main()
             break;
         case 'X':
             g.imprime_complemento();
-            cout << "\n";
             break;
         default:
         cout << "opcao invalida\n";
